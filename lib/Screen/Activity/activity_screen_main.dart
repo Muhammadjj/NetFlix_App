@@ -49,11 +49,11 @@ class _MyHomePageState extends State<ActivityScreen> {
 
   @override
   Widget build(BuildContext context) {
-    var heightMediaQuery = MediaQuery.sizeOf(context).height;
-    var widthMediaQuery = MediaQuery.sizeOf(context).width;
+    // var heightMediaQuery = MediaQuery.sizeOf(context).height;
+    // var widthMediaQuery = MediaQuery.sizeOf(context).width;
     // var bottom = heightMediaQuery -
     return Scaffold(
-        backgroundColor: allScreenBackgroundColours,
+        backgroundColor: allScreenBackgroundColors,
         appBar: activityAppBar(appBarText: "Activity"),
         body: ListView(children: [
           titleText(text: "Today"),

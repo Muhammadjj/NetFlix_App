@@ -17,7 +17,7 @@ class _MyHomePageState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-      backgroundColor: allScreenBackgroundColours,
+      backgroundColor: allScreenBackgroundColors,
       appBar: activityAppBar(appBarText: "Profile"),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,

@@ -40,7 +40,7 @@ class _MyHomePageState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
     var width = MediaQuery.of(context).size.width;
-    return Scaffold(backgroundColor: allScreenBackgroundColours,
+    return Scaffold(backgroundColor: allScreenBackgroundColors,
 
         body: SingleChildScrollView(
           scrollDirection: Axis.vertical,

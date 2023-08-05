@@ -27,7 +27,7 @@ class _MyHomePageState extends State<SearchScreen> {
     var height = MediaQuery.of(context).size.height;
     var width = MediaQuery.of(context).size.width;
     return Scaffold(
-        backgroundColor: allScreenBackgroundColours,
+        backgroundColor: allScreenBackgroundColors,
         body:  SingleChildScrollView(
           scrollDirection: Axis.vertical,
           child: Column(

@@ -51,7 +51,7 @@ class RoutesMethod {
     }else{
       return MaterialPageRoute(builder:  (context) => 
        Scaffold(
-        backgroundColor: allScreenBackgroundColours,
+        backgroundColor: allScreenBackgroundColors,
         body: const Center(child: Text("Don't Loading NetFlix Movies Page",maxLines: 1,
         style:TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 20),)),),);
     }

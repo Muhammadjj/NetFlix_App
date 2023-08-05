@@ -91,7 +91,7 @@ class _AnimatedSignUpPageUIState extends State<AnimatedSignUpPageUI> with Ticker
           child: Icon(Icons.arrow_back,color: textColor)),
 
       ),
-      backgroundColor: allScreenBackgroundColours,
+      backgroundColor: allScreenBackgroundColors,
       body: SingleChildScrollView(
         child: Stack(
           // ** Benefit of (Alignment.center): hm jo bhi work kry ga wo center sa start ho ga 
