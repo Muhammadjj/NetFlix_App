@@ -3,7 +3,9 @@ import 'package:animate_do/animate_do.dart';
 class ActivityListTile extends StatelessWidget {
   const ActivityListTile({super.key,
    required this.image,
-    required this.title, required this.subtitle});
+    required this.title, 
+    required this.subtitle
+    });
 
 
   final String image;

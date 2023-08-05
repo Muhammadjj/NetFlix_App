@@ -62,7 +62,7 @@ class MoviesAndSeries extends StatelessWidget {
      required this.movieName,
       required this.movieDescription,
        required this.starView,
-        required this.onTap});
+       required  this.onTap});
   
   final String image;
   final String seasonNo;

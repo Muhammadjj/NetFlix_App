@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 /// ** as ka laya ha 
 class CarouselViseContainer extends StatelessWidget {
   const CarouselViseContainer({super.key,
-   
     this.onTap,
      required this.ratingScrollImage,
       required this.filmName,
@@ -70,24 +69,27 @@ class MovieRatingScroll extends StatelessWidget {
     var width = MediaQuery.of(context).size.width;
     return GestureDetector(
       onTap: onTap,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Container(
-             height: height*0.25,
-             width: width*0.4,
-             decoration: BoxDecoration(borderRadius: BorderRadius.circular(20)),
-             child: ClipRRect(
-              borderRadius: BorderRadius.circular(10),
-              child: Image(image: AssetImage(ratingScrollImage),fit: BoxFit.fill,)),
-          ),
-           Text(filmName,style:const TextStyle(color: Colors.white),maxLines: 1,),
-           Row(
-            children: [
-              AutoSizeText(filmHours,style:const TextStyle(color: Color.fromARGB(255, 189, 189, 189)),maxLines: 1,),
-              SizedBox(width: width*0.18,),
-              Text(filmRatingStar,style:const TextStyle(color: Color.fromARGB(255, 189, 189, 189)),maxLines: 1,)],),
-        ],
+      child: Padding(
+        padding: const EdgeInsets.only(left: 10,right: 10,),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+               height: height*0.25,
+               width: width*0.4,
+               decoration: BoxDecoration(borderRadius: BorderRadius.circular(20)),
+               child: ClipRRect(
+                borderRadius: BorderRadius.circular(10),
+                child: Image(image: AssetImage(ratingScrollImage),fit: BoxFit.fill,)),
+            ),
+             Text(filmName,style:const TextStyle(color: Colors.white),maxLines: 1,),
+             Row(
+              children: [
+                AutoSizeText(filmHours,style:const TextStyle(color: Color.fromARGB(255, 189, 189, 189)),maxLines: 1,),
+                SizedBox(width: width*0.18,),
+                Text(filmRatingStar,style:const TextStyle(color: Color.fromARGB(255, 189, 189, 189)),maxLines: 1,)],),
+          ],
+        ),
       ),
     );
   }

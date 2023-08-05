@@ -1,6 +1,7 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:netflix_app/Screen/Validation_Pages/Animated_Circle_Login_Ui/Login_Page/animated_login_ui_main.dart';
 import '../../Components/AppBar_Widget/appbar_file.dart';
 import '../../Components/Colour_files/all_screen_color.dart';
 import 'profile_screen_widget.dart';
@@ -64,7 +65,8 @@ class _MyHomePageState extends State<ProfileScreen> {
               title: "Change Password",
               trailingText: ">",
             ),
-            const ProfileListTile(
+             ProfileListTile(
+              onTap: logoutTap,
               leadingIcon: Icons.logout_outlined,
               title: "Logout",
               trailingText: ">",
@@ -76,8 +78,11 @@ class _MyHomePageState extends State<ProfileScreen> {
   }
 
 
-
-
+///** Press This Card Logout Button And Navigate User Login Screen.
+  void logoutTap() {
+  Navigator.of(context).push(MaterialPageRoute(
+    builder: (context)=> const AnimatedLoginScreenUI()));
+}
 
     // ** Using text for this (Title text)
 Widget titleText({required String text}){

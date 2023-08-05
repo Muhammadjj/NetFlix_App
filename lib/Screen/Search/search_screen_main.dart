@@ -15,17 +15,17 @@ class SearchScreen extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<SearchScreen> {
-
-  // ** Star War
-  var image = "assest/images/star_war2.jpg";
-  var movieName = "Star War";
-  var movieDescription = "Fight.Movie";
-  var seasonNo = "SeasonNo 1";
-  var starView = "*3.6";
+  /// Todo: Using (SearchModelClass) because of Search Page all DATA Update krna ka laya use kya ha 
+  List<SearchModelClass> listSearchModelClass = [
+    SearchModelClass(image: "assest/images/prisonbreak1.jpg",movieName: "Prison Break",movieDescription: "Fight.Movie",seasonNo: "SeasonNo 1",starView: "*3.6"),
+    SearchModelClass(image: "assest/images/mulan.jpg",movieName: "Mulan",movieDescription: "Fight.Movie",seasonNo: "SeasonNo 2",starView: "*40.5"),
+    SearchModelClass(image: "assest/images/sisu.jpg",movieName: "Sisu",movieDescription: "Fight.Movie",seasonNo: "SeasonNo 3",starView: "*80.23"),
+    SearchModelClass(image: "assest/images/johnwick1.jpg",movieName: "John Wick",movieDescription: "Fight.Movie",seasonNo: "SeasonNo 4",starView: "*30.60"),
+  ];
   @override
   Widget build(BuildContext context) {
-    // var height = MediaQuery.of(context).size.height;
-    // var width = MediaQuery.of(context).size.width;
+    var height = MediaQuery.of(context).size.height;
+    var width = MediaQuery.of(context).size.width;
     return Scaffold(
         backgroundColor: allScreenBackgroundColours,
         body:  SingleChildScrollView(
@@ -35,7 +35,7 @@ class _MyHomePageState extends State<SearchScreen> {
               //** Auto Searching Text Field .
               const AutoTextField(),
         
-                                      //** Popular Heroes Part */
+                                          //** Popular Heroes Part */
               // ** Popular Heros Text.
               titleText(text: "Actors"),
                 //  ** Popular Heroes.
@@ -65,14 +65,32 @@ class _MyHomePageState extends State<SearchScreen> {
         
                 //  ** Movies and Series text.
                 titleText(text: "Movies & Series"),
-                 MoviesAndSeries(
-                  onTap: starWarMovie,
-                  image: image,
-                  movieName: movieName,
-                  movieDescription: movieDescription,
-                  seasonNo: seasonNo,
-                  starView: starView,
-                ),
+                 SizedBox(
+                  height: height*0.5,
+                  width: width*0.9,
+                   child: ListView.builder(
+                    scrollDirection: Axis.vertical,
+                     itemCount: listSearchModelClass.length,
+                     itemBuilder: (BuildContext context, int index) {
+                       return MoviesAndSeries(
+                        onTap: () {
+                          Navigator.pushNamed(context, RoutesName.movieAQuietPlace,
+                          /// Todo: Using (ModelClass) because of all pages transfer data as ki waja sa ho raha ha.Aur All Movies Pages ma data Transfer hm ase ModelClass ki waja sa kr raha ha 
+                          arguments: ModelClass(
+                            bigImage: listSearchModelClass[index].image,
+                            filmName: listSearchModelClass[index].movieName, 
+                            filmHours: listSearchModelClass[index].movieDescription, 
+                            starRating: listSearchModelClass[index].starView)
+                            );
+                        },
+                        image: listSearchModelClass[index].image, 
+                        seasonNo: listSearchModelClass[index].seasonNo, 
+                        movieName: listSearchModelClass[index].movieName, 
+                        movieDescription: listSearchModelClass[index].movieDescription, 
+                        starView: listSearchModelClass[index].starView);
+                     },
+                   ),
+                 ),
         
         
             ],
@@ -80,10 +98,6 @@ class _MyHomePageState extends State<SearchScreen> {
         ));
   }
 
-   starWarMovie(){
-    Navigator.pushNamed(context, RoutesName.movieMulan,arguments: ModelClass(
-      bigImage: image, filmName: movieName, filmHours: seasonNo, starRating: starView));
-  }
 
   // ** Using text for this (Title text)
 Widget titleText({required String text}){

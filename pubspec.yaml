@@ -40,7 +40,8 @@ dependencies:
   auto_size_text: ^3.0.0
   readmore: ^2.2.0
   animate_do: ^3.0.2
-  google_fonts: ^5.0.0
+  animated_text_kit: ^4.2.2
+  form_validator: ^2.1.1
   # neumorphic_ui: ^1.0.0`    # neumorphic_ui 1.0.0  package this neumorphism 
 
 dev_dependencies:

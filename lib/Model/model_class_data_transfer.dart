@@ -10,3 +10,19 @@ class ModelClass {
   String filmHours;
   String starRating;
 }
+
+
+
+
+/// ** (SearchModelClass) Using for Search class and 
+/// ** update all data .
+class SearchModelClass {
+  SearchModelClass(
+    {required this.image,
+     required this.movieName,
+     required this.movieDescription,
+     required this.seasonNo,
+     required this.starView,
+     });
+  String image, movieName, movieDescription, seasonNo, starView;
+}

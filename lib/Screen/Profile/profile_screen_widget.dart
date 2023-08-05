@@ -56,26 +56,32 @@ class ProfilePicture extends StatelessWidget {
 class ProfileListTile extends StatelessWidget {
   const ProfileListTile({super.key,
    required this.leadingIcon,
-    required this.title, required this.trailingText});
+    required this.title,
+    required this.trailingText,
+    this.onTap});
   
   final IconData  leadingIcon;
   final String title;
   final String trailingText;
+  final GestureTapCallback? onTap;
   @override
   Widget build(BuildContext context) {
     return FadeInUp(
       delay: const Duration(milliseconds: 500),
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Card(
-          elevation: 8,
-          shape: BeveledRectangleBorder(borderRadius: BorderRadius.circular(5)),
-          color:const Color.fromARGB(255, 71, 71, 71),
-          child: ListTile(
-            // dense: true,
-            leading:Icon(leadingIcon,color: Colors.grey,),
-            title: Text(title,style:const TextStyle(color: Colors.white,fontWeight: FontWeight.w400,fontSize: 17),maxLines: 1,),
-            trailing: Text(trailingText,style: const TextStyle(color: Colors.white,fontSize: 20),maxLines: 1,),
+      child: GestureDetector(
+        onTap: onTap,
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Card(
+            elevation: 8,
+            shape: BeveledRectangleBorder(borderRadius: BorderRadius.circular(5)),
+            color:const Color.fromARGB(255, 71, 71, 71),
+            child: ListTile(
+              // dense: true,
+              leading:Icon(leadingIcon,color: Colors.grey,),
+              title: Text(title,style:const TextStyle(color: Colors.white,fontWeight: FontWeight.w400,fontSize: 17),maxLines: 1,),
+              trailing: Text(trailingText,style: const TextStyle(color: Colors.white,fontSize: 20),maxLines: 1,),
+            ),
           ),
         ),
       ),

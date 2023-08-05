@@ -158,15 +158,7 @@ class DetailPageMethod extends StatelessWidget {
   }
   
   
-// ** Using text for this (Title text)
-Widget titleText({required String text}){
-  return  Padding(
-    padding: const  EdgeInsets.all(12.0),
-    child: Align(
-    alignment: Alignment.topLeft,
-    child: AutoSizeText(text,style: const TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 25),)),
-  );
-}
+
 
 // **TCircle Avatar ko hm ny opr use kya ha .
 Widget circleAvatar({required Color color,required IconData icon})=>
@@ -180,6 +172,22 @@ CircleAvatar(
 
 
 
+
+///** Using text for this (Title text) and using method complete 
+///** Projects 
+Widget titleText({required String text}){
+  return  Padding(
+    padding: const  EdgeInsets.all(12.0),
+    child: Align(
+    alignment: Alignment.topLeft,
+    child: AutoSizeText(text,style: const TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 25),)),
+  );
+}
+
+
+
+
+/// 
 class PeopleReviewsMessage extends StatelessWidget {
   const PeopleReviewsMessage({super.key, required this.leadingImage, required this.titleText, required this.subTitle,});
    final String leadingImage;
@@ -194,7 +202,9 @@ class PeopleReviewsMessage extends StatelessWidget {
       width: width,
       decoration: BoxDecoration(borderRadius: BorderRadius.circular(20),
       color:const Color.fromARGB(255, 70, 70, 70)),
-      child: Column(children: [
+      child: Column(
+        mainAxisSize: MainAxisSize.max,
+        children: [
         ListTile(
              leading: CircleAvatar(backgroundImage: AssetImage(leadingImage),),
              title: AutoSizeText(titleText,style:const TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),

@@ -32,10 +32,16 @@
     "Rouran",
     "seach",
     "supersoldier",
+    "Typer",
     "Wakanda",
     "wala",
     "webp",
     "Yifei",
     "Yoson"
-  ]
+  ],
+  "editor.fontSize": 15,
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.minimap.autohide": true,
+  "debug.allowBreakpointsEverywhere": false
 }

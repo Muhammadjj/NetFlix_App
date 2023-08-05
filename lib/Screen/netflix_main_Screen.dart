@@ -25,12 +25,11 @@ class NetFlix extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'NetFlix App',
-      
       theme: ThemeData(primarySwatch: Colors.grey,),
-      initialRoute: RoutesName.netFlixMainScreen,
+      initialRoute: RoutesName.splashScreen,
       onGenerateRoute: RoutesMethod.onGenerate,
     );
-  }
+  }                 
 }
 
 class NetFlixMainPage extends StatefulWidget {
@@ -51,7 +50,7 @@ class _MyHomePageState extends State<NetFlixMainPage> {
   // ** List hm ny as laya bnye q ky hmy wo all Classes chaya the jn ko hmm ny 
   // ** BottomNavigationBar ma View krwana ha .
   List listOfBottomBarShowClasses =[
-     const HomeScreen(),
+    const  HomeScreen(),
      const SearchScreen(),
      const ActivityScreen(),
      const ProfileScreen(),
