@@ -1,6 +1,7 @@
 ## Netflix App
 # Using Flutter 
-
+## Using SQLite Database .
+## Amazing Ui's and Custom Animations
 All types Movies i means hollywood , bollywood and lollywood movies and all movies define description pages .
 Nesw Feature Search page use your mind set search movie and Every letter seaching movies .
 Profile Page Define Current User all Data submit profile page and update data End user . 
